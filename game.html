@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Stick Pick</title>
+      <title>Circle Pick</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -95,20 +95,33 @@
     var row2=5;
     var row3=7;
     var moveType;
+    var start=true;
     function first(){
+      if(boolCount==0 && start==false){
+        alert("Please remove at least one circle");
+      } else {
       boolCount=0;
       moveType="The first player";
-      document.body.style.background = "green";
+      document.body.style.background = "#39ff14";
+      }
+      start=false;
     }
     function second(){
+      if(boolCount==0 && start==false){
+        alert("Please remove at least one circle");
+      } else {
       boolCount=0;
       moveType="The second player";
-      document.body.style.background = "blue";
+      document.body.style.background = "#F72119";
+      }
+      start=false
     }
     function reload(){
       location.reload(true);
+      start=true;
     }
     function myFunction(id) {
+    start=true;
   if((id=="button1" || id=="button2" || id=="button3") && (boolCount==0 || boolCount==1)){
     document.getElementById(id).style.visibility = "hidden";
     boolCount=1;
@@ -128,6 +141,7 @@
   if(game==true){
   if(total==0){
     alert(moveType + " has lost!");
+    window.location.href = "hi.html";
   }
 }
 }
