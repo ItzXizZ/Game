@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Stick Pick</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevion.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout"  style="background-color:powderblue;">
+    
+      <!-- loader  -->
+      
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  
+                  
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- banner -->
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+    <center>
+    <a href="index.html">
+    <button class="read_more">back home</button>
+    </a>
+    <br>
+    <br>
+     <img src="nim-penny.gif" id="button1" class="row1" onclick="myFunction('button1')">
+     <img src="nim-penny.gif" id="button2" class="row1" onclick="myFunction('button2')">
+     <img src="nim-penny.gif" id="button3" class="row1" onclick="myFunction('button3')">
+     <br>
+     <img src="nim-penny.gif" id="button4" class="row2" onclick="myFunction('button4')">
+     <img src="nim-penny.gif" id="button5" class="row2" onclick="myFunction('button5')">
+     <img src="nim-penny.gif" id="button6" class="row2" onclick="myFunction('button6')">
+     <img src="nim-penny.gif" id="button7" class="row2" onclick="myFunction('button7')">
+     <img src="nim-penny.gif" id="button8" class="row2" onclick="myFunction('button8')">
+    <br>
+     <img src="nim-penny.gif" id="button9" class="row3" onclick="myFunction('button9')">
+     <img src="nim-penny.gif" id="button10" class="row3" onclick="myFunction('button10')">
+     <img src="nim-penny.gif" id="button11" class="row3" onclick="myFunction('button11')">
+     <img src="nim-penny.gif" id="button12" class="row3" onclick="myFunction('button12')">
+     <img src="nim-penny.gif" id="button13" class="row3" onclick="myFunction('button13')">
+     <img src="nim-penny.gif" id="button14" class="row3" onclick="myFunction('button14')">
+     <img src="nim-penny.gif" id="button15" class="row3" onclick="myFunction('button15')">
+     <img src="nim-penny.gif" id="button16" class="row3" onclick="myFunction('button16')">
+     <br>
+     <br>
+    <button class="read_more" onclick="reload()">Reset Game</button>
+    <button class="read_more" onclick="first()">First Player</button>
+    <button class="read_more" onclick="second()">Second Player</button>
+     </center>
+
+    <script>
+    var boolCount=0;
+    var moveNumber=0;
+    var game=true;
+    var total=15;
+    var row1=3;
+    var row2=5;
+    var row3=7;
+    var moveType;
+    function first(){
+      boolCount=0;
+      moveType="The first player";
+      document.body.style.background = "green";
+    }
+    function second(){
+      boolCount=0;
+      moveType="The second player";
+      document.body.style.background = "blue";
+    }
+    function reload(){
+      location.reload(true);
+    }
+    function myFunction(id) {
+  if((id=="button1" || id=="button2" || id=="button3") && (boolCount==0 || boolCount==1)){
+    document.getElementById(id).style.visibility = "hidden";
+    boolCount=1;
+    moveNumber++;
+    total--;
+  } else if((id=="button4" || id=="button5" || id=="button6" || id=="button7" || id=="button8") && (boolCount==0 || boolCount==2)){
+    document.getElementById(id).style.visibility = "hidden";
+    boolCount=2;
+    moveNumber++;
+    total--;
+  } else if((id=="button9" || id=="button10" || id=="button11" || id=="button12" || id=="button13" || id=="button14" || id=="button15" || id=="button16") && (boolCount==0 || boolCount==3)){
+    document.getElementById(id).style.visibility = "hidden";
+    boolCount=3;
+    moveNumber++;
+    total--;
+  }
+  if(game==true){
+  if(total==-1){
+    alert(moveType + " has lost!");
+  }
+}
+}
+
+
+
+/*
+  function comp(){
+  var row,amount;
+  if(game==true){
+  row=Math.floor(Math.random() * 3);
+  if(row==0 && row1!=0){
+    amount=Math.floor(Math.random() * (row1+1));
+  } else if(row==1 && row2!=0){
+    amount=Math.floor(Math.random() * (row2+1));
+  } else if(row==2 && row3!=0){
+    amount=Math.floor(Math.random() * (1+ row3));
+  } else if(row1!=0){
+    amount=Math.floor(Math.random() * (row1+1));
+  } else if(row2!=0){
+    amount=Math.floor(Math.random() * (row2+1));
+  } else if(row3!=0){
+    amount=Math.floor(Math.random() * (1+ row3));
+  }
+}
+  var id;
+  for(let i=1; i<=row+1; i++){
+    if(amount==0){
+      break;
+    }
+    if(i==1){
+      id="button1";
+    } else if(i==2){
+      id="button2";
+    } else if(i==3){
+      id="button3";
+    } else if(i==4){
+      id="button4";
+    } else if(i==5){
+      id="button5";
+    } else if(i==6){
+      id="button6";
+    } else {
+      id="button7";
+    }
+    if(document.getElementById(id).style.visibility != "hidden"){
+      document.getElementById(id).style.visibility = "hidden";
+      amount--;
+      total--;
+      if(row==0){
+        row1--;
+      } else if(row==1){
+        row2--;
+      } else {
+        row3--;
+      }
+    }
+  }
+  boolCount=0;
+  moveType="computer";
+  if(game==true){
+  if(total==0){
+    game==false;
+    alert("The " + moveType + " has won!");
+  }
+}
+}
+*/
+
+
+    </script>
+      
+   </body>
+</html>
+
