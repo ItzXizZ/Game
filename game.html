@@ -79,7 +79,6 @@
      <img src="nim-penny.gif" id="button13" class="row3" onclick="myFunction('button13')">
      <img src="nim-penny.gif" id="button14" class="row3" onclick="myFunction('button14')">
      <img src="nim-penny.gif" id="button15" class="row3" onclick="myFunction('button15')">
-     <img src="nim-penny.gif" id="button16" class="row3" onclick="myFunction('button16')">
      <br>
      <br>
     <button class="read_more" onclick="reload()">Reset Game</button>
@@ -127,7 +126,7 @@
     total--;
   }
   if(game==true){
-  if(total==-1){
+  if(total==0){
     alert(moveType + " has lost!");
   }
 }
